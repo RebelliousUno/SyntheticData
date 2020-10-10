@@ -1,11 +1,9 @@
-import concurrent.futures
 import csv
 import gc
+import resource as resource
 import sys
 from datetime import datetime
-from multiprocessing import Pool
 
-import resource as resource
 from mimesis import Address
 from mimesis import Person
 
