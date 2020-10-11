@@ -41,7 +41,7 @@ def generate_addresses():
 def write_person(start_r: int):
     end_r = start_r + 999
     # print(gc.get_count())
-    print(f"Write Person  {datetime.now()} {start_r}-{end_r}")
+    # print(f"Write Person  {datetime.now()} {start_r}-{end_r}")
     with open(f'person_{start_r}_{end_r}.csv', mode='w', newline='\n') as csvfile:
         person = generate_people()
         writer = csv.DictWriter(csvfile, person.keys())
@@ -52,13 +52,13 @@ def write_person(start_r: int):
             person['id'] = id
             person_list.append(person)
         writer.writerows(person_list)
-    print(f"Done Person  {datetime.now()} {start_r}-{end_r}")
+    # print(f"Done Person  {datetime.now()} {start_r}-{end_r}")
 
 
 def write_address(start_r: int):
     end_r = start_r + 999
     # print(gc.get_count())
-    print(f"Write Address {datetime.now()} {start_r}-{end_r}")
+    # print(f"Write Address {datetime.now()} {start_r}-{end_r}")
     with open(f'address_{start_r}_{end_r}.csv', mode='w', newline='\n') as address_file:
         address = generate_addresses()
         address_writer = csv.DictWriter(address_file, address.keys())
@@ -69,7 +69,7 @@ def write_address(start_r: int):
             address['id'] = id
             address_list.append(address)
         address_writer.writerows(address_list)
-    print(f"Done Address {datetime.now()} {start_r}-{end_r}")
+    # print(f"Done Address {datetime.now()} {start_r}-{end_r}")
 
 
 def generate_data(r: int):
@@ -81,6 +81,7 @@ def generate_csvs(start: int):
     # 0 to 1 million...
     # arr = map(lambda x: x * 1000, range(1000))
     # for r in arr:
+    print(f"Start {start}")
     generate_data(start)
 
 
